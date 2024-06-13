@@ -46,6 +46,7 @@ nav {
     align-items: center;
     font-size: 40px;
     font-weight: 400;
+    font-family: 'Roboto', sans-serif;
 }
 
 .navbar-list ol {
@@ -80,7 +81,6 @@ nav {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap; /* Added to allow items to wrap if necessary */
-    padding-top: 10vh;
 }
 
 .item {
