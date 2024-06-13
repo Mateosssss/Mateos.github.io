@@ -1,0 +1,274 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+}
+nav{
+    position: fixed;
+    z-index: 1000;
+    background-color: #fae3b2;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.logo{
+    height: 10vh;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logo #site-logo{
+    width: 10vh;
+    height: 10vh;
+}
+.logo #site-title{
+    font-size: 30px;
+    font-family: "Gwendolyn", cursive;
+}
+.navbar-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 400;
+}
+.navbar-list ol {
+    list-style-type: none;
+    padding: 0;
+}
+.navbar-list ol li {
+    display: inline-block;
+    margin-right: 20px;
+    transition: 0.3s ease-in-out;
+}
+.navbar-list ol li a {
+    text-decoration: none;
+    color: grey;
+    transition: 0.3s ease-in-out;
+}
+.navbar-list ol li:hover{
+    transform: translateY(-3px);
+    color:black;
+}
+.navbar-list ol li a:hover{
+    color:black;
+}
+
+.container {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; /* Added to allow items to wrap if necessary */
+}
+
+.item {
+    width: 16vw; /* Adjusted width to fit 5 items in a row with margins */
+    height: 40vh;
+    border: 1px solid black;
+    margin-top: 20px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    transition: 0.3s ease-in-out;
+    box-shadow: 1px 3px 5px gray;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.item:hover{
+    transform: scale(1.03);
+    box-shadow: 5px 5px 10px gray, -5px -5px 10px lightgray;
+}
+
+.item .product-img{
+    width: 8vw;
+    height: 8vw;
+}
+.add_to_cart{
+    background-color: burlywood;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+.add_to_cart a{
+    text-decoration: none;
+    color: white;
+}
+.item .description{
+    font-size: 15px;
+}
+.item .title{
+    font-size: 25px;
+}
+
+section{
+    padding-top: 10vh;
+    width: 100vw;
+    height: 100vh;
+}
+#home{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+#home .sections{
+    margin: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+#home .welcome{
+    margin-top: 3vh;
+    padding: 50px;
+    background-color: rgb(0, 0, 0,0.8);
+    box-shadow: 10px 10px 20px 2px gray;
+    color: white;
+    border-radius: 25px;
+    width: 80vw;
+}
+#home .section{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 20px;
+    margin: 1vw;
+    height: 40vh;
+    width: 20vw;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 1px 1px 20px 1px gray;
+    transition: 0.3s ease-in-out;
+}
+#home .section img{
+    width: 8vw;
+    height: 8vw;
+}
+#home .section .button{
+    background-color: palevioletred;
+    border: 1px solid palevioletred;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 5px;
+    border-width: 10px;
+}
+#home .section:hover{
+    transform: scale(1.03);
+}
+
+
+#about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-wrap: wrap;
+    flex-direction: column;
+    padding: 30px 100px;
+    font-size: 30px;
+}
+.workers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.workers img{
+    width: 10vw;
+    height: 10vw;
+}
+
+.work{
+    box-shadow: 1px 3px 5px gray;
+    border: 1px solid black;
+    padding: 10px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+}
+.work:hover{
+    transform: scale(1.03);
+}
+label{
+    text-align: center;
+}
+
+#contact .container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+#contact h1 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.contact-info p {
+    margin: 5px 0;
+    color: #666;
+}
+.contact-info p strong {
+    color: #333;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    color: #333;
+}
+form input, form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+form button {
+    padding: 12px 30px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #e91e63;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+form button:hover {
+    background-color: #d81b60;
+}
