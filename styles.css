@@ -1,124 +1,198 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     margin: 0;
     padding: 0;
-    overflow:hidden;
+    overflow-x: hidden;
 }
-nav{
+
+nav {
     position: fixed;
     z-index: 1000;
     background-color: #fae3b2;
-    width: 100vw;
+    width: 100%;
     height: 10vh;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
-.logo{
+
+.logo {
     height: 10vh;
     width: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.logo #site-logo{
+
+.logo #site-logo {
     width: 10vh;
     height: 10vh;
 }
-.logo #site-title{
+
+.logo #site-title {
     font-size: 30px;
     font-family: "Gwendolyn", cursive;
 }
-.navbar-list{
+
+.navbar-list {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 40px;
     font-weight: 400;
 }
+
 .navbar-list ol {
     list-style-type: none;
     padding: 0;
+    display: flex;
 }
+
 .navbar-list ol li {
     display: inline-block;
     margin-right: 20px;
     transition: 0.3s ease-in-out;
 }
+
 .navbar-list ol li a {
     text-decoration: none;
     color: grey;
     transition: 0.3s ease-in-out;
 }
-.navbar-list ol li:hover{
+
+.navbar-list ol li:hover {
     transform: translateY(-3px);
-    color:black;
+    color: black;
 }
-.navbar-list ol li a:hover{
-    color:black;
+
+.navbar-list ol li a:hover {
+    color: black;
+}
+
+/* Hamburger menu styles */
+.hamburger-menu {
+    display: none; /* Hidden by default */
+}
+
+.hamburger-menu .bar {
+    width: 30px;
+    height: 3px;
+    background-color: grey;
+    margin: 5px auto;
+    transition: 0.3s;
+}
+
+/* Media Query for responsive navbar */
+@media screen and (max-width: 768px) {
+    .navbar-list {
+        display: none; /* Hide the navbar list */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show the hamburger menu */
+    }
+
+    /* Adjust the styles for the expanded hamburger menu */
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .navbar-list {
+        flex-direction: column;
+        position: absolute;
+        top: 10vh;
+        left: 0;
+        background-color: #fae3b2;
+        width: 100%;
+        padding: 10px 0;
+        z-index: 99;
+    }
+
+    .navbar-list ol {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-list ol li {
+        margin: 10px 0;
+    }
 }
 
 .container {
-    width: 100vw;
-    height: 90vh;
+    max-width: 100%;
+    height: 100%;
+    margin: 10vh 0;
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap; /* Added to allow items to wrap if necessary */
+    flex-wrap: wrap;
 }
 
 .item {
-    width: 16vw; /* Adjusted width to fit 5 items in a row with margins */
-    height: 40vh;
+    width: 45%;
+    max-width: 300px;
+    height: auto;
     border: 1px solid black;
     margin-top: 20px;
-    margin-left: 1vw;
-    margin-right: 1vw;
     transition: 0.3s ease-in-out;
     box-shadow: 1px 3px 5px gray;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
-    flex-wrap: wrap;
     padding: 5px;
 }
 
-.item:hover{
+.item:hover {
     transform: scale(1.03);
     box-shadow: 5px 5px 10px gray, -5px -5px 10px lightgray;
 }
 
-.item .product-img{
-    width: 8vw;
-    height: 8vw;
+.item .product-img {
+    width: 80%;
+    height: auto;
 }
-.add_to_cart{
+
+.add_to_cart {
     background-color: burlywood;
     border: none;
     padding: 5px;
     border-radius: 10px;
 }
-.add_to_cart a{
+
+.add_to_cart a {
     text-decoration: none;
     color: white;
 }
-.item .description{
+
+.item .description {
     font-size: 15px;
 }
-.item .title{
+
+.item .title {
     font-size: 25px;
 }
 
-section{
+section {
     padding-top: 10vh;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: auto;
 }
-#home{
+
+#home {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -126,41 +200,46 @@ section{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
 }
-#home .sections{
+
+#home .sections {
     margin: 2vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 }
-#home .welcome{
+
+#home .welcome {
     margin-top: 3vh;
     padding: 50px;
-    background-color: rgb(0, 0, 0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 10px 10px 20px 2px gray;
     color: white;
     border-radius: 25px;
     width: 80vw;
 }
-#home .section{
+
+#home .section {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
     padding: 20px;
     margin: 1vw;
-    height: 40vh;
-    width: 20vw;
+    height: auto;
+    max-width: 300px;
     border: 1px solid black;
     border-radius: 15px;
     box-shadow: 1px 1px 20px 1px gray;
     transition: 0.3s ease-in-out;
 }
-#home .section img{
-    width: 8vw;
-    height: 8vw;
+
+#home .section img {
+    width: 80%;
+    height: auto;
 }
-#home .section .button{
+
+#home .section .button {
     background-color: palevioletred;
     border: 1px solid palevioletred;
     color: white;
@@ -169,87 +248,98 @@ section{
     padding: 5px;
     border-width: 10px;
 }
-#home .section:hover{
+
+#home .section:hover {
     transform: scale(1.03);
 }
 
-
-#about{
+#about {
     display: flex;
     justify-content: center;
     align-items: center;
     text-wrap: wrap;
     flex-direction: column;
-    padding: 30px 100px;
-    font-size: 30px;
+    padding: 30px 5%;
+    font-size: 20px;
 }
-.workers{
+
+.workers {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 }
-.workers img{
-    width: 10vw;
-    height: 10vw;
+
+.workers img {
+    width: 20%;
+    height: auto;
 }
 
-.work{
+.work {
     box-shadow: 1px 3px 5px gray;
     border: 1px solid black;
     padding: 10px;
-    margin-left: 1vw;
-    margin-right: 1vw;
+    margin: 1vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: 0.3s ease-in-out;
 }
-.work:hover{
+
+.work:hover {
     transform: scale(1.03);
 }
-label{
+
+label {
     text-align: center;
 }
 
 #contact .container {
-    max-width: 900px;
+    max-width: 90%;
     margin: 50px auto;
     padding: 30px;
     background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
+
 #contact h1 {
     color: #333;
     margin-bottom: 20px;
     text-align: center;
 }
+
 .contact-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 30px;
 }
+
 .contact-info p {
     margin: 5px 0;
     color: #666;
 }
+
 .contact-info p strong {
     color: #333;
 }
+
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 form label {
     align-self: flex-start;
     margin-bottom: 5px;
     color: #333;
 }
-form input, form textarea {
+
+form input,
+form textarea {
     width: 100%;
     max-width: 500px;
     padding: 10px;
@@ -257,8 +347,9 @@ form input, form textarea {
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
+
 form button {
     padding: 12px 30px;
     font-size: 16px;
@@ -269,6 +360,39 @@ form button {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 form button:hover {
     background-color: #d81b60;
+}
+
+/* Media Queries for Responsive Design */
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item {
+        width: 90%;
+    }
+
+    #home .sections {
+        flex-direction: column;
+    }
+
+    #home .section {
+        width: 90%;
+        max-width: none;
+    }
+
+    #home .section img {
+        width: 80%;
+    }
+
+    .workers img {
+        width: 40%;
+    }
+
+    #contact
 }
